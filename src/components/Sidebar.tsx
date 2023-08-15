@@ -328,7 +328,8 @@ const SidebarLink: React.FC<SidebarLinkPropsType> = ({
             activeClassName="active"
             onClick={onClose}
         >
-            <LinkText>{name}</LinkText>
+            {icon}
+            <CategoryText>{name}</CategoryText>
             {badge ? <LinkBadge label={badge}/> : ""}
         </Link>
     );
@@ -445,16 +446,13 @@ const Sidebar: React.FC<RouteComponentProps & SidebarPropsType> = ({
                                         </Collapse>
                                     </React.Fragment>
                                 ) : category.icon ? (
-                                    <SidebarCategory
-                                        isCollapsable={false}
+                                    <SidebarLink
+                                        key={index}
                                         name={category.id}
                                         to={category.path}
-                                        activeClassName="active"
-                                        component={NavLink}
                                         icon={category.icon}
-                                        exact
-                                        button
                                         badge={category.badge}
+                                        onClose={rest.onClose}
                                     />
                                 ) : null}
                             </React.Fragment>
