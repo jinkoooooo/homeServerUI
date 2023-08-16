@@ -43,8 +43,8 @@ function App() {
   return (
       <React.Fragment>
         <Helmet
-            titleTemplate="%s | AWCS App"
-            defaultTitle="AWCS App - Altiall Warehouse Control System"
+            titleTemplate="%s | HomeServer"
+            defaultTitle=" App - JG HomeServer UI"
         />
         <StylesProvider jss={jss}>
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
